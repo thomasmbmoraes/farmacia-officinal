@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Farmácia Officinal — Controle de estoque" />
+  <title>Farmácia Officinal</title>
+
+  <!-- PWA (preparado para Fase 9) -->
+  <meta name="theme-color" content="#16a34a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Officinal" />
+
+  <!-- Ícones Tabler -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3/dist/tabler-icons.min.css" />
+
+  <!-- SheetJS para exportação Excel -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+
+  <!-- Root do app -->
+  <div id="app"></div>
+
+  <!-- Container de toasts -->
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- App (ES Modules) -->
+  <script type="module" src="./app.js"></script>
+
+</body>
+</html>
