@@ -3,6 +3,18 @@
 // Requer SheetJS carregado no index.html como XLSX global.
 // ================================================================
 
+export const COLUNAS_PENDENCIAS = [
+  { campo: 'criado_em',         titulo: 'Data conferência', fmt: fmtDataHora },
+  { campo: 'nome_simplificado', titulo: 'Produto' },
+  { campo: 'apresentacao',      titulo: 'Apresentação' },
+  { campo: 'dosagem',           titulo: 'Dosagem' },
+  { campo: 'localizacao_nome',  titulo: 'Localização' },
+  { campo: 'qtd_total',         titulo: 'Qtd. vendida' },
+  { campo: 'qtd_emitida',       titulo: 'Qtd. emitida' },
+  { campo: 'qtd_pendente',      titulo: 'Qtd. pendente' },
+  { campo: 'status',            titulo: 'Status' },
+];
+
 export const COLUNAS_ESTOQUE = [
   { campo: 'codigo_interno',    titulo: 'Código' },
   { campo: 'codigo_barras',     titulo: 'Cód. barras' },
@@ -58,6 +70,10 @@ export function exportarExcel(dados, colunas, nome = 'exportacao') {
   XLSX.writeFile(wb, `${nome}_${hoje()}.xlsx`);
 }
 
+function fmtDataHora(v) {
+  if (!v) return '';
+  return new Date(v).toLocaleString('pt-BR');
+}
 function fmtMoeda(v) {
   if (v == null) return '';
   return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(v);
