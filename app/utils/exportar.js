@@ -3,6 +3,19 @@
 // Requer SheetJS carregado no index.html como XLSX global.
 // ================================================================
 
+export const COLUNAS_VALIDADE = [
+  { campo: 'nome_simplificado', titulo: 'Produto' },
+  { campo: 'apresentacao',      titulo: 'Apresentação' },
+  { campo: 'dosagem',           titulo: 'Dosagem' },
+  { campo: 'categoria_nome',    titulo: 'Categoria' },
+  { campo: 'marca_nome',        titulo: 'Marca' },
+  { campo: 'localizacao_nome',  titulo: 'Localização' },
+  { campo: 'qtd_atual',         titulo: 'Qtd. atual' },
+  { campo: 'validade',          titulo: 'Validade',      fmt: fmtData },
+  { campo: 'dias_para_vencer',  titulo: 'Dias restantes' },
+  { campo: 'status_validade',   titulo: 'Status' },
+];
+
 export const COLUNAS_PENDENCIAS = [
   { campo: 'criado_em',         titulo: 'Data conferência', fmt: fmtDataHora },
   { campo: 'nome_simplificado', titulo: 'Produto' },
