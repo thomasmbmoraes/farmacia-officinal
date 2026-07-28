@@ -6,11 +6,12 @@
   <meta name="description" content="Farmácia Officinal — Controle de estoque" />
   <title>Farmácia Officinal</title>
 
-  <!-- PWA (preparado para Fase 9) -->
+  <!-- PWA -->
   <meta name="theme-color" content="#16a34a" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Officinal" />
+  <link rel="manifest" href="./manifest.json" />
 
   <!-- Ícones Tabler -->
   <link rel="stylesheet"
@@ -32,6 +33,16 @@
 
   <!-- App (ES Modules) -->
   <script type="module" src="./app.js"></script>
+
+  <!-- PWA: registrar service worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .catch(err => console.warn('SW não registrado:', err));
+      });
+    }
+  </script>
 
 </body>
 </html>
